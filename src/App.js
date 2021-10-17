@@ -8,7 +8,7 @@ import Header from "./components/Pages/Shared/Header/Header";
 
 function App() {
   return (
-    <div className=" h-screen flex flex-col">
+    <div className="h-screen flex flex-col">
       <Router>
         <Header />
 

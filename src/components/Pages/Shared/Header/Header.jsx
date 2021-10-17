@@ -1,6 +1,7 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import SiteIcon from "./favicon.ico";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,33 +12,71 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex w-full items-center">
               <div className="flex-shrink-0">
-                <NavLink to="/">Logo</NavLink>
+                <NavLink to="/">
+                  <span className="flex group transition">
+                    <img className="h-6" src={SiteIcon} alt="" />
+                    <span className="ml-2 text-lg tracking-wider group-hover:text-gray-300">
+                      Immune and Inspired
+                    </span>
+                  </span>
+                </NavLink>
               </div>
 
-              <div className="text-sm ml-auto hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-2">
-                  <NavLink to="/home" className="nav-link">
+              <div className="hidden md:block text-base">
+                <div className="ml-10 w-full flex items-center space-x-4">
+                  <NavLink
+                    activeClassName="text-green-300 transition"
+                    to="/home"
+                    className="transition hover:text-green-300"
+                  >
                     Home
                   </NavLink>
 
-                  <NavLink className="nav-link" to="/services">
+                  <NavLink
+                    activeClassName="text-green-300 transition"
+                    className="transition hover:text-green-300"
+                    to="/services"
+                  >
                     Our Services
                   </NavLink>
 
-                  <NavLink className="nav-link" to="/doctors">
-                    Our Doctors
-                  </NavLink>
-
-                  <NavLink className="nav-link" to="/contact-us">
+                  <NavLink
+                    activeClassName="text-green-300 transition"
+                    className="transition hover:text-green-300"
+                    to="/contact-us"
+                  >
                     Contact Us
                   </NavLink>
 
-                  <NavLink className="nav-link" to="/login">
-                    Log In
+                  <NavLink
+                    activeClassName="text-green-300 transition"
+                    className="transition hover:text-green-300"
+                    to="/covid-19"
+                  >
+                    Corona Info
                   </NavLink>
                 </div>
               </div>
+
+              <div className=" ml-auto hidden md:block">
+                {false ? (
+                  <NavLink
+                    className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
+                    to="/login"
+                  >
+                    Log In
+                  </NavLink>
+                ) : (
+                  <div className="ml-auto flex items-center">
+                    <div className="h-8 w-8 rounded-full bg-red-500"></div>
+                    <button className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75">
+                      Log out
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
+
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -100,17 +139,53 @@ const Header = () => {
                 ref-setter={ref}
                 className="text-center px-2 pt-2 pb-3 space-y-2 sm:px-3"
               >
-                <NavLink to="/meals" className="nav-link block ">
-                  Meals
+                <NavLink
+                  activeClassName="text-green-300 transition"
+                  to="/home"
+                  className="block"
+                >
+                  Home
                 </NavLink>
 
-                <NavLink className="nav-link block " to="/cart">
-                  New1
+                <NavLink
+                  activeClassName="text-green-300 transition"
+                  className="block"
+                  to="/services"
+                >
+                  Our Services
                 </NavLink>
 
-                <NavLink className="nav-link block " to="/login">
-                  Log In
+                <NavLink
+                  activeClassName="text-green-300 transition"
+                  className="block"
+                  to="/contact-us"
+                >
+                  Contact Us
                 </NavLink>
+
+                <NavLink
+                  activeClassName="text-green-300 transition"
+                  className="block mb-4"
+                  to="/covid-19"
+                >
+                  Corona Info
+                </NavLink>
+
+                {false ? (
+                  <NavLink
+                    className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
+                    to="/login"
+                  >
+                    Log In
+                  </NavLink>
+                ) : (
+                  <div className="ml-auto flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-full bg-red-500"></div>
+                    <button className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75">
+                      Log out
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           )}
