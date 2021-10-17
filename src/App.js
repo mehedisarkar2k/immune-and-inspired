@@ -1,14 +1,14 @@
-import { NotFound } from "http-errors";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Pages/Home/Home";
+import NotFound from "./components/Pages/NotFound/NotFound";
 import Services from "./components/Pages/Services/Services";
 import Footer from "./components/Pages/Shared/Footer/Footer";
 import Header from "./components/Pages/Shared/Header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className=" h-screen flex flex-col">
       <Router>
         <Header />
 
