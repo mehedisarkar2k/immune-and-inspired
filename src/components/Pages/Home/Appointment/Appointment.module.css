@@ -1,0 +1,4 @@
+.primaryBg {
+  background: linear-gradient(rgba(5, 150, 105, 0.2), rgba(5, 150, 105, 0.2)),
+    url("./appointment-bg.png") right center/contain no-repeat;
+}
