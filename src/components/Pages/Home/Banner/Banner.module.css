@@ -1,0 +1,4 @@
+.Banner {
+  background: linear-gradient(rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1)),
+    url("./bg.png") center center/cover no-repeat;
+}

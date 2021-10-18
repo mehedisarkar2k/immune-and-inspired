@@ -2,8 +2,8 @@ import React from "react";
 
 const Services = () => {
   return (
-    <div>
-      <h2>This is services</h2>
+    <div className="container mx-auto">
+      <h2>This is Services</h2>
     </div>
   );
 };
