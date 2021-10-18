@@ -35,9 +35,9 @@ const Header = () => {
                   <NavLink
                     activeClassName="text-green-300 transition"
                     className="transition hover:text-green-300"
-                    to="/services"
+                    to="/departments"
                   >
-                    Our Services
+                    Departments
                   </NavLink>
 
                   <NavLink
@@ -150,9 +150,9 @@ const Header = () => {
                 <NavLink
                   activeClassName="text-green-300 transition"
                   className="block"
-                  to="/services"
+                  to="/departments"
                 >
-                  Our Services
+                  Departments
                 </NavLink>
 
                 <NavLink

@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Departments from "./components/Pages/Departments/Departments";
+import DetailsOfACart from "./components/Pages/DetailsOfACard/DetailsOfACart";
 import Home from "./components/Pages/Home/Home";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import Services from "./components/Pages/Services/Services";
 import Footer from "./components/Pages/Shared/Footer/Footer";
 import Header from "./components/Pages/Shared/Header/Header";
 
@@ -21,8 +22,12 @@ function App() {
             <Home />
           </Route>
 
-          <Route exact path="/services">
-            <Services />
+          <Route exact path="/departments">
+            <Departments />
+          </Route>
+
+          <Route exact path="/service/:id">
+            <DetailsOfACart />
           </Route>
 
           <Route path="*">
