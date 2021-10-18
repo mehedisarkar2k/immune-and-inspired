@@ -17,12 +17,12 @@ const Goal = () => {
           Contributing To Society Through Healthcare.
         </h2>
 
-        <div className="flex mt-12">
+        <div className="flex flex-col md:flex-row mt-12">
           <div className="left">
             <h3 className="text-xl text-gray-700 text-left mb-5">
               Let Us Do The Billing So You Can Focus On The Healing.
             </h3>
-            <div className="w-1/2 rounded-3xl overflow-hidden group ">
+            <div className="w-full md:w-1/2 p-10 md:p-0 rounded-3xl overflow-hidden group ">
               <img
                 className="transition transform group-hover:scale-110"
                 src={Doctor1}
@@ -31,7 +31,7 @@ const Goal = () => {
             </div>
           </div>
 
-          <div className="w-1/2 p-5 mt-10 list-none text-gray-600 space-y-6">
+          <div className="w-full md:w-1/2 p-5 mt-10 list-none text-gray-600 space-y-6">
             <p className="text-sm text-gray-700 font-bold">
               The first thing to remember about success is that it is a process
               – nothing more, nothing less.
@@ -59,10 +59,13 @@ const Goal = () => {
           </div>
         </div>
 
-        <button className="mt-4 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
-          Make an Appointment
-          <FaStethoscope className="ml-2" />
-        </button>
+        <div className="flex items-center justify-center mt-5">
+          <button className="mt-4 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
+            Make an Appointment
+            <FaStethoscope className="ml-2" />
+          </button>
+        </div>
+
         <p className="text-lg text-gray-600 mt-8">
           There is really no magic to it and it’s not reserved only for a select
           few people. As such, success really has nothing to do with luck,

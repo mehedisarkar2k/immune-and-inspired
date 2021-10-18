@@ -1,10 +1,15 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
 import SiteIcon from "./favicon.ico";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signOutUser } = useAuth();
+
+  console.log(user);
+
   return (
     <header className="bg-green-600">
       <nav className="container mx-auto font-medium text-gray-100">
@@ -59,7 +64,7 @@ const Header = () => {
               </div>
 
               <div className=" ml-auto hidden md:block">
-                {false ? (
+                {!user?.email ? (
                   <NavLink
                     className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
                     to="/login"
@@ -68,8 +73,17 @@ const Header = () => {
                   </NavLink>
                 ) : (
                   <div className="ml-auto flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-red-500"></div>
-                    <button className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75">
+                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden">
+                      <img
+                        className="rounded-full"
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                    </div>
+                    <button
+                      onClick={signOutUser}
+                      className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75"
+                    >
                       Log out
                     </button>
                   </div>
@@ -171,7 +185,7 @@ const Header = () => {
                   Corona Info
                 </NavLink>
 
-                {false ? (
+                {!user?.email ? (
                   <NavLink
                     className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
                     to="/login"
@@ -180,8 +194,17 @@ const Header = () => {
                   </NavLink>
                 ) : (
                   <div className="ml-auto flex items-center justify-center">
-                    <div className="h-8 w-8 rounded-full bg-red-500"></div>
-                    <button className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75">
+                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden">
+                      <img
+                        className="rounded-full"
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                    </div>
+                    <button
+                      onClick={signOutUser}
+                      className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75"
+                    >
                       Log out
                     </button>
                   </div>
