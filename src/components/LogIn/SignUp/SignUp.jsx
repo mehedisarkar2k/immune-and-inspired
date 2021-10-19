@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { GoSignIn } from "react-icons/go";
 import { Link } from "react-router-dom";
@@ -13,7 +12,8 @@ import useAuth from "../../../hooks/useAuth";
 
 const SignUp = () => {
   const { setEmail, setPassword, setName, setMessage, message } = useAuth();
-  const { handleNewUserWithEmail } = useHandleSignInSignOut();
+  const { handleNewUserWithEmail, handleGoogleSignIn, handleGithubSignIn } =
+    useHandleSignInSignOut();
 
   const nameInputHandle = (e) => {
     setName(e.target.value);
@@ -92,9 +92,16 @@ const SignUp = () => {
           <p className="text-gray-700 text-lg text-center">Sign in with</p>
 
           <div className="flex items-center justify-center space-x-2 mt-2">
-            <FcGoogle size="2em" className="cursor-pointer" />
-            <AiFillGithub size="2em" className="cursor-pointer" />
-            <BsFacebook size="2em" className="cursor-pointer" color="blue" />
+            <FcGoogle
+              onClick={handleGoogleSignIn}
+              size="2em"
+              className="cursor-pointer"
+            />
+            <AiFillGithub
+              onClick={handleGithubSignIn}
+              size="2em"
+              className="cursor-pointer"
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { GoSignIn } from "react-icons/go";
 import { Link } from "react-router-dom";
@@ -92,7 +91,6 @@ const SignIn = () => {
               size="2em"
               className="cursor-pointer"
             />
-            <BsFacebook size="2em" className="cursor-pointer" color="blue" />
           </div>
         </div>
       </div>
