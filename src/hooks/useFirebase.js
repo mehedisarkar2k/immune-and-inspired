@@ -4,6 +4,7 @@ import {
   GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -32,6 +33,11 @@ const useFirebase = () => {
   const githubSignIn = () => {
     setIsLoading(true);
     return signInWithPopup(auth, githubProvider);
+  };
+
+  const emailPassSignIn = () => {
+    setIsLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const createUserWithEmail = () => {
@@ -70,6 +76,7 @@ const useFirebase = () => {
     name,
     googleSignIn,
     githubSignIn,
+    emailPassSignIn,
     createUserWithEmail,
     setName,
     signOutUser,

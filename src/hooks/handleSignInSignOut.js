@@ -6,6 +6,7 @@ const useHandleSignInSignOut = () => {
   const {
     googleSignIn,
     githubSignIn,
+    emailPassSignIn,
     createUserWithEmail,
     setIsLoading,
     name,
@@ -45,6 +46,18 @@ const useHandleSignInSignOut = () => {
       });
   };
 
+  const handleEmailPassSignIn = () => {
+    setIsLoading(true);
+    emailPassSignIn()
+      .then(() => {
+        // history.push(redirect_uri);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        history.push(redirect_uri);
+      });
+  };
+
   const handleNewUserWithEmail = (e) => {
     e.preventDefault();
     createUserWithEmail()
@@ -57,7 +70,12 @@ const useHandleSignInSignOut = () => {
       });
   };
 
-  return { handleGoogleSignIn, handleGithubSignIn, handleNewUserWithEmail };
+  return {
+    handleGoogleSignIn,
+    handleGithubSignIn,
+    handleEmailPassSignIn,
+    handleNewUserWithEmail,
+  };
 };
 
 export default useHandleSignInSignOut;
