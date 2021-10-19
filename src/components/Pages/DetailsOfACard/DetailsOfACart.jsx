@@ -3,7 +3,7 @@ import { AiOutlineCaretLeft } from "react-icons/ai";
 import { FaStethoscope } from "react-icons/fa";
 import { useHistory, useParams } from "react-router";
 import useServiceData from "../../../hooks/useServiceData";
-import NewsLater from "../Home/NewsLater/NewsLater";
+import ContactForm from "../Contact/ContactForm";
 
 const DetailsOfACart = () => {
   const [services] = useServiceData();
@@ -27,7 +27,7 @@ const DetailsOfACart = () => {
           alt={item[0]?.tittle}
         />
 
-        <p className="px-10 text-gray-600 text-justify">
+        <p className="px-6 md:p-10  text-gray-600 text-justify">
           Medicine is the science and practice of caring for a patient, managing
           the diagnosis, prognosis, prevention, treatment, palliation of their
           injury or disease, and promoting their health. Medicine encompasses a
@@ -60,7 +60,12 @@ const DetailsOfACart = () => {
         </div>
       </div>
 
-      <NewsLater />
+      <div className="p-14 md:p-8 lg:p-5">
+        <h4 className="text-3xl mt-5 text-green-700">
+          Feel free to say any thing
+        </h4>
+        <ContactForm />
+      </div>
     </div>
   );
 };

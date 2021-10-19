@@ -13,7 +13,7 @@ const Goal = () => {
 
   return (
     <div className="bg-gray-50">
-      <div className={`py-20 container mx-auto ${GoalStyle.Goal}`}>
+      <div className={`py-20 px-10 container mx-auto ${GoalStyle.Goal}`}>
         <div className="flex items-center justify-start">
           <span className="h-0.5 bg-green-400 w-10"></span>
           <h4 className="text-green-600 text-lg ml-2">About our Goal</h4>
