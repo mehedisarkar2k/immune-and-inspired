@@ -27,6 +27,20 @@ const DetailsOfACart = () => {
           alt={item[0]?.tittle}
         />
 
+        <p className="px-10 text-gray-600 text-justify">
+          Medicine is the science and practice of caring for a patient, managing
+          the diagnosis, prognosis, prevention, treatment, palliation of their
+          injury or disease, and promoting their health. Medicine encompasses a
+          variety of health care practices evolved to maintain and restore
+          health by the prevention and treatment of illness. Contemporary
+          medicine applies biomedical sciences, biomedical research, genetics,
+          and medical technology to diagnose, treat, and prevent injury and
+          disease, typically through pharmaceuticals or surgery, but also
+          through therapies as diverse as psychotherapy, external splints and
+          traction, medical devices, biologics, and ionizing radiation, amongst
+          others.
+        </p>
+
         <div className="flex flex-col items-center justify-center">
           <button className="mt-4 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
             Make an Appointment

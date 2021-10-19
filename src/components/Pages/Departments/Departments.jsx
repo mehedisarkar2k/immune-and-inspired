@@ -24,7 +24,7 @@ const Departments = () => {
       </div>
 
       <div className="container mx-auto p-10 -mt-52">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 mx-20 md:mx-0 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {services.map((service) => (
             <Department key={service.id} service={service} />
           ))}
