@@ -2,12 +2,14 @@ import React from "react";
 import { BsFillTelephonePlusFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { MdAttachEmail } from "react-icons/md";
+import NewsLater from "../Home/NewsLater/NewsLater";
 import ContactImg from "./contact.png";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div className="bg-green-50 py-10 md:py-20">
-      <div className="container mx-auto ">
+    <div className="bg-green-50 pt-10 md:pt-20">
+      <div className="container mx-auto mb-5">
         <div className="text-center flex flex-col md:flex-row">
           <h2 className="order-2 md:order-1 md:w-1/2 w-full">
             <div className="space-y-2">
@@ -75,40 +77,10 @@ const Contact = () => {
             could be time, effort, sacrifice, money or perhaps, something else.
           </p>
 
-          <div className="mt-4 flex flex-col space-y-2">
-            <input
-              className="outline-none border-2 border-green-700 px-4 py-1 rounded-md w-1/2"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your Name"
-            />
-            <input
-              className="outline-none border-2 border-green-700 px-4 py-1 rounded-md w-1/2"
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="Your Phone"
-            />
-            <input
-              className="outline-none border-2 border-green-700 px-4 py-1 rounded-md w-1/2"
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="Your Subject"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="outline-none border-2 border-green-700 px-4 py-1 rounded-md w-1/2"
-              name="message"
-              id="message"
-            ></textarea>
-            <button className="w-48 bg-green-700 text-white outline-none border-none rounded-full px-4 py-2 hover:bg-green-600 focus:ring focus:ring-green-700 focus:ring-offset-2">
-              Send a Message
-            </button>
-          </div>
+          <ContactForm />
         </div>
       </div>
+      <NewsLater />
     </div>
   );
 };

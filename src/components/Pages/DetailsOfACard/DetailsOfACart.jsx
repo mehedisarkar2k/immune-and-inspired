@@ -3,6 +3,7 @@ import { AiOutlineCaretLeft } from "react-icons/ai";
 import { FaStethoscope } from "react-icons/fa";
 import { useHistory, useParams } from "react-router";
 import useServiceData from "../../../hooks/useServiceData";
+import NewsLater from "../Home/NewsLater/NewsLater";
 
 const DetailsOfACart = () => {
   const [services] = useServiceData();
@@ -44,6 +45,8 @@ const DetailsOfACart = () => {
           </div>
         </div>
       </div>
+
+      <NewsLater />
     </div>
   );
 };

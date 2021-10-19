@@ -4,7 +4,7 @@ const NewsLater = () => {
   return (
     <div className="bg-gray-50 py-20">
       <div className="container mx-auto shadow-2xl  py-10 bg-green-50 rounded-2xl">
-        <h2 className="font-bold text-4xl text-green-700 mb-10">
+        <h2 className="font-bold text-4xl text-green-700 text-center mb-10">
           Subscribe to our news later
         </h2>
         <div className="w-3/5 mx-auto">

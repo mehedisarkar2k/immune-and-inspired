@@ -3,6 +3,7 @@ import "./App.css";
 import SignIn from "./components/LogIn/SignIn/SignIn";
 import SignUp from "./components/LogIn/SignUp/SignUp";
 import Contact from "./components/Pages/Contact/Contact";
+import CoronaInfo from "./components/Pages/CoronaInfo/CoronaInfo";
 import Departments from "./components/Pages/Departments/Departments";
 import DetailsOfACart from "./components/Pages/DetailsOfACard/DetailsOfACart";
 import Home from "./components/Pages/Home/Home";
@@ -39,6 +40,10 @@ function App() {
             <PrivateRoute exact path="/service/:id">
               <DetailsOfACart />
             </PrivateRoute>
+
+            <Route exact path="/covid-19">
+              <CoronaInfo />
+            </Route>
 
             <Route path="/login">
               <SignIn />
