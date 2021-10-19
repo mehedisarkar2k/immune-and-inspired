@@ -10,7 +10,7 @@ const Departments = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center px-10 justify-start ${DepartmentsStyle.departmentContainer}`}
+        className={`flex flex-col items-center justify-start ${DepartmentsStyle.departmentContainer}`}
       >
         <div className="flex items-center justify-center space-x-2 text-green-200 mt-5 md:mt-10 lg:mt-20">
           <span className="h-1 bg-green-500 w-14"></span>
@@ -23,7 +23,7 @@ const Departments = () => {
         </h2>
       </div>
 
-      <div className="container mx-auto py-10 -mt-52">
+      <div className="container mx-auto p-10 -mt-52">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {services.map((service) => (
             <Department key={service.id} service={service} />
