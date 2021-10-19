@@ -1,10 +1,16 @@
 import React from "react";
 import { FaStethoscope } from "react-icons/fa";
 import { GoDiffAdded } from "react-icons/go";
+import { useHistory } from "react-router";
 import Doctor1 from "./doctor.webp";
 import GoalStyle from "./Goal.module.css";
 
 const Goal = () => {
+  const history = useHistory();
+  const goToDepartmentPAge = () => {
+    history.push("/contact-us");
+  };
+
   return (
     <div className="bg-gray-50">
       <div className={`py-20 container mx-auto ${GoalStyle.Goal}`}>
@@ -59,7 +65,10 @@ const Goal = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center mt-5">
+        <div
+          onClick={goToDepartmentPAge}
+          className="flex items-center justify-center mt-5"
+        >
           <button className="mt-4 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
             Make an Appointment
             <FaStethoscope className="ml-2" />
