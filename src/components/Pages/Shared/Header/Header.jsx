@@ -8,6 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, signOutUser } = useAuth();
 
+  const userName = user?.email?.split("@")[0].toUpperCase();
   const firstLater = user?.photoURL ?? user?.email?.split("")[0].toUpperCase();
 
   return (
@@ -16,7 +17,7 @@ const Header = () => {
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex w-full items-center">
-              <div className="flex-shrink-0">
+              <div className="">
                 <NavLink to="/">
                   <span className="flex group transition">
                     <img className="h-6" src={SiteIcon} alt="" />
@@ -27,7 +28,7 @@ const Header = () => {
                 </NavLink>
               </div>
 
-              <div className="hidden md:block text-base">
+              <div className="hidden lg:block text-base">
                 <div className="ml-10 w-full flex items-center space-x-4">
                   <NavLink
                     activeClassName="text-green-300 transition"
@@ -63,7 +64,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className=" ml-auto hidden md:block">
+              <div className=" ml-auto hidden lg:block">
                 {!user?.email ? (
                   <NavLink
                     className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
@@ -84,6 +85,11 @@ const Header = () => {
                         firstLater
                       )}
                     </div>
+
+                    <span className="text-xs tracking-wide ml-1">
+                      {userName}
+                    </span>
+
                     <button
                       onClick={signOutUser}
                       className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75"
@@ -95,7 +101,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -152,7 +158,7 @@ const Header = () => {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="md:hidden" id="mobile-menu">
+            <div className="lg:hidden" id="mobile-menu">
               <div
                 ref-setter={ref}
                 className="text-center px-2 pt-2 pb-3 space-y-2 sm:px-3"
@@ -209,6 +215,11 @@ const Header = () => {
                         firstLater
                       )}
                     </div>
+
+                    <span className="text-xs tracking-wide ml-1">
+                      {userName}
+                    </span>
+
                     <button
                       onClick={signOutUser}
                       className="ml-2 bg-green-700 text-gray-100 px-4 py-1 rounded-full outline-none transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-green-700 focus:ring-opacity-75"
