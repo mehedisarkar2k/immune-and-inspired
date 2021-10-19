@@ -4,19 +4,27 @@ import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { GoSignIn } from "react-icons/go";
 import { Link } from "react-router-dom";
+import {
+  emailValidation,
+  passwordValidation,
+} from "../../../functions/validationWithRegex";
 import useHandleSignInSignOut from "../../../hooks/handleSignInSignOut";
 import useAuth from "../../../hooks/useAuth";
 
 const SignIn = () => {
-  const { setEmail, setPassword } = useAuth();
+  const { setEmail, setPassword, message, setMessage } = useAuth();
   const { handleGoogleSignIn, handleGithubSignIn, handleEmailPassSignIn } =
     useHandleSignInSignOut();
 
   const emailInputHandle = (e) => {
-    setEmail(e.target.value);
+    const email = e.target.value;
+    emailValidation(email, setMessage);
+    setEmail(email);
   };
   const passwordInputHandle = (e) => {
-    setPassword(e.target.value);
+    const password = e.target.value;
+    passwordValidation(password, setMessage);
+    setPassword(password);
   };
 
   return (
@@ -44,6 +52,8 @@ const SignIn = () => {
               placeholder="Your Password"
             />
           </div>
+
+          <p className="text-red-500">{message}</p>
 
           <div
             onClick={handleEmailPassSignIn}

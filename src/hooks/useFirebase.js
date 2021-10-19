@@ -78,6 +78,7 @@ const useFirebase = () => {
     githubSignIn,
     emailPassSignIn,
     createUserWithEmail,
+    setMessage,
     setName,
     signOutUser,
     setEmail,
