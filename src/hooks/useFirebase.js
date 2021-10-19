@@ -16,32 +16,42 @@ const useFirebase = () => {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
   const googleSignIn = () => {
+    setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   const createUserWithEmail = (e) => {
+    setIsLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signOutUser = () => {
+    setIsLoading(true);
     signOut(auth)
       .then(() => {
         setUser({});
       })
+      .then(() => setIsLoading(false))
       .then(() => setMessage("You have successfully logged out."));
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+      } else {
+        setUser({});
       }
+      setIsLoading(false);
     });
+
+    return () => unsubscribed;
   }, [auth]);
 
   return {
@@ -52,6 +62,8 @@ const useFirebase = () => {
     signOutUser,
     setEmail,
     setPassword,
+    isLoading,
+    setIsLoading,
   };
 };
 

@@ -32,9 +32,9 @@ function App() {
               <Departments />
             </PrivateRoute>
 
-            <Route exact path="/contact-us">
+            <PrivateRoute exact path="/contact-us">
               <Contact />
-            </Route>
+            </PrivateRoute>
 
             <PrivateRoute exact path="/service/:id">
               <DetailsOfACart />
