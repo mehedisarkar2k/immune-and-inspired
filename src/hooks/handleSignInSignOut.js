@@ -11,6 +11,7 @@ const useHandleSignInSignOut = () => {
     setIsLoading,
     name,
     setMessage,
+    message,
   } = useAuth();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
@@ -83,21 +84,23 @@ const useHandleSignInSignOut = () => {
 
   const handleNewUserWithEmail = (e) => {
     e.preventDefault();
-    createUserWithEmail()
-      .then((result) => {
-        updateUser();
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        setMessage(error.message);
-      })
-      .finally(() => {
-        const user = getAuth().currentUser;
-        setIsLoading(false);
-        user?.email
-          ? history.push(redirect_uri)
-          : history.push(location.state?.from);
-      });
+    if (!message) {
+      createUserWithEmail()
+        .then((result) => {
+          updateUser();
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          setMessage(error.message);
+        })
+        .finally(() => {
+          const user = getAuth().currentUser;
+          setIsLoading(false);
+          user?.email
+            ? history.push(redirect_uri)
+            : history.push(location.state?.from);
+        });
+    }
   };
 
   return {

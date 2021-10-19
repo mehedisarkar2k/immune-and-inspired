@@ -36,6 +36,7 @@ const SignIn = () => {
         >
           <div className="border-2 w-60 border-green-700 flex rounded-3xl">
             <input
+              required
               onBlur={emailInputHandle}
               className="bg-transparent px-4 py-1 outline-none w-full border-none rounded-3xl"
               type="email"
@@ -46,6 +47,7 @@ const SignIn = () => {
           </div>
           <div className="border-2 w-60 border-green-700 flex rounded-3xl">
             <input
+              required
               onBlur={passwordInputHandle}
               className="bg-transparent px-4 py-1 outline-none w-full border-none rounded-3xl"
               type="password"
