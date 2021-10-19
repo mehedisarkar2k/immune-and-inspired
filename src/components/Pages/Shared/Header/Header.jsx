@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, signOutUser } = useAuth();
 
-  console.log(user);
+  const firstLater = user?.photoURL ?? user?.email?.split("")[0].toUpperCase();
 
   return (
     <header className="bg-green-600">
@@ -73,12 +73,16 @@ const Header = () => {
                   </NavLink>
                 ) : (
                   <div className="ml-auto flex items-center">
-                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden">
-                      <img
-                        className="rounded-full"
-                        src={user?.photoURL}
-                        alt=""
-                      />
+                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden flex items-center justify-center">
+                      {user?.photoURL ? (
+                        <img
+                          className="rounded-full"
+                          src={user?.photoURL}
+                          alt=""
+                        />
+                      ) : (
+                        firstLater
+                      )}
                     </div>
                     <button
                       onClick={signOutUser}
@@ -194,12 +198,16 @@ const Header = () => {
                   </NavLink>
                 ) : (
                   <div className="ml-auto flex items-center justify-center">
-                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden">
-                      <img
-                        className="rounded-full"
-                        src={user?.photoURL}
-                        alt=""
-                      />
+                    <div className="h-8 w-8 rounded-full border-green-700 border-2 overflow-hidden flex items-center justify-center">
+                      {user?.photoURL ? (
+                        <img
+                          className="rounded-full"
+                          src={user?.photoURL}
+                          alt=""
+                        />
+                      ) : (
+                        firstLater
+                      )}
                     </div>
                     <button
                       onClick={signOutUser}

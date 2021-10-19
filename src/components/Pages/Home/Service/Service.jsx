@@ -4,7 +4,6 @@ import Department from "../../Departments/Department/Department";
 
 const Service = () => {
   const [services] = useServiceData();
-  console.log("From service", services);
 
   return (
     <div className="container mx-auto py-20 z-10 text-white">

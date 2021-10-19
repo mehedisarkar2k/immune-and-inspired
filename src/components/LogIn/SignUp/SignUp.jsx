@@ -4,8 +4,24 @@ import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { GoSignIn } from "react-icons/go";
 import { Link } from "react-router-dom";
+import useHandleSignInSignOut from "../../../hooks/handleSignInSignOut";
+import useAuth from "../../../hooks/useAuth";
 
 const SignUp = () => {
+  const { setEmail, setPassword, setName } = useAuth();
+  const { handleNewUserWithEmail } = useHandleSignInSignOut();
+
+  const nameInputHandle = (e) => {
+    setName(e.target.value);
+  };
+
+  const emailInputHandle = (e) => {
+    setEmail(e.target.value);
+  };
+  const passwordInputHandle = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <div className="py-10">
       <div className="py-10 container mx-auto bg-green-50 shadow-lg rounded-xl">
@@ -13,6 +29,7 @@ const SignUp = () => {
         <div className="flex flex-col items-center space-y-2">
           <div className="border-2 w-60 border-green-700 flex rounded-3xl">
             <input
+              onBlur={nameInputHandle}
               className="bg-transparent px-4 py-1 outline-none w-full border-none rounded-3xl"
               type="text"
               name="name"
@@ -22,6 +39,7 @@ const SignUp = () => {
           </div>
           <div className="border-2 w-60 border-green-700 flex rounded-3xl">
             <input
+              onBlur={emailInputHandle}
               className="bg-transparent px-4 py-1 outline-none w-full border-none rounded-3xl"
               type="email"
               name="email"
@@ -31,6 +49,7 @@ const SignUp = () => {
           </div>
           <div className="border-2 w-60 border-green-700 flex rounded-3xl">
             <input
+              onBlur={passwordInputHandle}
               className="bg-transparent px-4 py-1 outline-none w-full border-none rounded-3xl"
               type="password"
               name="password"
@@ -39,7 +58,10 @@ const SignUp = () => {
             />
           </div>
 
-          <div className="flex items-center justify-center mt-5">
+          <div
+            onClick={handleNewUserWithEmail}
+            className="flex items-center justify-center mt-5"
+          >
             <button className="mt-2 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
               Sign Up
               <GoSignIn className="ml-2" />

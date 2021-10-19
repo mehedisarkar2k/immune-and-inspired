@@ -5,10 +5,7 @@ import useAuth from "../../hooks/useAuth";
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading } = useAuth();
 
-  console.log(isLoading, user);
-
   if (isLoading) {
-    console.log("get");
     return (
       <h3 className="text-red-500 text-3xl text-center mt-10">Loading...</h3>
     );

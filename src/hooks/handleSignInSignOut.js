@@ -1,12 +1,25 @@
+import { getAuth } from "@firebase/auth";
 import { useHistory, useLocation } from "react-router";
 import useAuth from "./useAuth";
 
 const useHandleSignInSignOut = () => {
-  const { googleSignIn, githubSignIn, createUserWithEmail, setIsLoading } =
-    useAuth();
+  const {
+    googleSignIn,
+    githubSignIn,
+    createUserWithEmail,
+    setIsLoading,
+    name,
+  } = useAuth();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
   const history = useHistory();
+
+  const updateUser = () => {
+    const user = getAuth().currentUser;
+    if (user) {
+      user.displayName = name;
+    }
+  };
 
   const handleGoogleSignIn = () => {
     setIsLoading(true);
@@ -34,11 +47,14 @@ const useHandleSignInSignOut = () => {
 
   const handleNewUserWithEmail = (e) => {
     e.preventDefault();
-    console.log("Clicked");
-    createUserWithEmail().then((result) => {
-      console.log(result.user);
-      history.push("/login");
-    });
+    createUserWithEmail()
+      .then((result) => {
+        updateUser();
+      })
+      .finally(() => {
+        setIsLoading(false);
+        history.push(redirect_uri);
+      });
   };
 
   return { handleGoogleSignIn, handleGithubSignIn, handleNewUserWithEmail };

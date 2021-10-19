@@ -15,6 +15,7 @@ firebaseInitialize();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -33,8 +34,9 @@ const useFirebase = () => {
     return signInWithPopup(auth, githubProvider);
   };
 
-  const createUserWithEmail = (e) => {
+  const createUserWithEmail = () => {
     setIsLoading(true);
+
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -64,13 +66,15 @@ const useFirebase = () => {
   return {
     user,
     message,
+    isLoading,
+    name,
     googleSignIn,
     githubSignIn,
     createUserWithEmail,
+    setName,
     signOutUser,
     setEmail,
     setPassword,
-    isLoading,
     setIsLoading,
   };
 };

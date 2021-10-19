@@ -4,7 +4,6 @@ import Department from "./Department/Department";
 
 const Departments = () => {
   const [services] = useServiceData();
-  console.log("From service", services);
 
   return (
     <div className="container mx-auto py-20">
