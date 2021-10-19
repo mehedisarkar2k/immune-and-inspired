@@ -6,7 +6,7 @@ import "./NotFound.css";
 
 const NotFound = () => {
   return (
-    <div className="text-center w-full mx-auto py-8 not-found">
+    <div className="text-center w-full mx-auto py-8 not-found px-10">
       <h2 className="text-2xl text-green-600">
         <span className="text-red-500">Something went wrong.</span> please check
         again...

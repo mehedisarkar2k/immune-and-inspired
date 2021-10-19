@@ -10,7 +10,7 @@ const Departments = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center justify-start ${DepartmentsStyle.departmentContainer}`}
+        className={`flex flex-col items-center px-10 justify-start ${DepartmentsStyle.departmentContainer}`}
       >
         <div className="flex items-center justify-center space-x-2 text-green-200 mt-5 md:mt-10 lg:mt-20">
           <span className="h-1 bg-green-500 w-14"></span>

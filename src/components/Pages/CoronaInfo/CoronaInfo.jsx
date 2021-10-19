@@ -4,7 +4,7 @@ import "./CoronaInfo.css";
 
 const CoronaInfo = () => {
   return (
-    <div className="corona">
+    <div className="corona px-10">
       <div className=" mt-10 container mx-auto">
         <h2 className="text-center text-4xl text-green-700">
           Coronavirus disease (COVID-19)

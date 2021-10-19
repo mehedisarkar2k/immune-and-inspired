@@ -17,7 +17,7 @@ const DetailsOfACart = () => {
   };
 
   return (
-    <div>
+    <div className="px-10">
       <div className="container mx-auto text-center space-y-4 py-5 shadow-lg my-5 rounded-3xl bg-green-50">
         <h2 className="text-green-600 text-4xl">{item[0]?.title}</h2>
         <p className="text-gray-600">{item[0]?.description}</p>

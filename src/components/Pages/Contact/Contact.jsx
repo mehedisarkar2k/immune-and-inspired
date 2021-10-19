@@ -8,7 +8,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div className="bg-green-50 pt-10 md:pt-20">
+    <div className="bg-green-50 pt-10 md:pt-20 px-10">
       <div className="container mx-auto mb-5">
         <div className="text-center flex flex-col md:flex-row">
           <h2 className="order-2 md:order-1 md:w-1/2 w-full">
