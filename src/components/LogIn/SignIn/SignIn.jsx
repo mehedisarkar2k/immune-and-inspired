@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import useHandleSignInSignOut from "../../../hooks/handleSignInSignOut";
 
 const SignIn = () => {
-  const { handleGoogleSignIn } = useHandleSignInSignOut();
+  const { handleGoogleSignIn, handleGithubSignIn } = useHandleSignInSignOut();
 
   return (
     <div className="py-10">
@@ -45,7 +45,7 @@ const SignIn = () => {
             Forgotten Password?
           </Link>
           <p>
-            Donn't have an account?{" "}
+            Don't have an account?{" "}
             <Link className="text-blue-800" to="/signUp">
               Create new.
             </Link>
@@ -62,7 +62,11 @@ const SignIn = () => {
               size="2em"
               className="cursor-pointer"
             />
-            <AiFillGithub size="2em" className="cursor-pointer" />
+            <AiFillGithub
+              onClick={handleGithubSignIn}
+              size="2em"
+              className="cursor-pointer"
+            />
             <BsFacebook size="2em" className="cursor-pointer" color="blue" />
           </div>
         </div>

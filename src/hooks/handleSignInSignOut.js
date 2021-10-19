@@ -2,7 +2,8 @@ import { useHistory, useLocation } from "react-router";
 import useAuth from "./useAuth";
 
 const useHandleSignInSignOut = () => {
-  const { googleSignIn, createUserWithEmail, setIsLoading } = useAuth();
+  const { googleSignIn, githubSignIn, createUserWithEmail, setIsLoading } =
+    useAuth();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
   const history = useHistory();
@@ -10,6 +11,18 @@ const useHandleSignInSignOut = () => {
   const handleGoogleSignIn = () => {
     setIsLoading(true);
     googleSignIn()
+      .then(() => {
+        // history.push(redirect_uri);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        history.push(redirect_uri);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    setIsLoading(true);
+    githubSignIn()
       .then(() => {
         // history.push(redirect_uri);
       })
@@ -28,7 +41,7 @@ const useHandleSignInSignOut = () => {
     });
   };
 
-  return { handleGoogleSignIn, handleNewUserWithEmail };
+  return { handleGoogleSignIn, handleGithubSignIn, handleNewUserWithEmail };
 };
 
 export default useHandleSignInSignOut;

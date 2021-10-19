@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
@@ -20,10 +21,16 @@ const useFirebase = () => {
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const googleSignIn = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  const githubSignIn = () => {
+    setIsLoading(true);
+    return signInWithPopup(auth, githubProvider);
   };
 
   const createUserWithEmail = (e) => {
@@ -58,6 +65,7 @@ const useFirebase = () => {
     user,
     message,
     googleSignIn,
+    githubSignIn,
     createUserWithEmail,
     signOutUser,
     setEmail,

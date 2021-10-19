@@ -9,26 +9,27 @@ const PrivateRoute = ({ children, ...rest }) => {
 
   if (isLoading) {
     console.log("get");
-    return <h3 className="text-red-500 text-3xl">Loading</h3>;
-  } else {
     return (
-      <Route
-        {...rest}
-        render={({ location }) =>
-          user.email ? (
-            children
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location },
-              }}
-            />
-          )
-        }
-      />
+      <h3 className="text-red-500 text-3xl text-center mt-10">Loading...</h3>
     );
   }
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        user.email ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
 };
 
 export default PrivateRoute;
