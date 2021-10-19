@@ -10,6 +10,7 @@ const useHandleSignInSignOut = () => {
     createUserWithEmail,
     setIsLoading,
     name,
+    setMessage,
   } = useAuth();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
@@ -28,9 +29,16 @@ const useHandleSignInSignOut = () => {
       .then(() => {
         // history.push(redirect_uri);
       })
-      .finally(() => {
+      .catch((error) => {
         setIsLoading(false);
-        history.push(redirect_uri);
+        setMessage(error.message);
+      })
+      .finally(() => {
+        const user = getAuth().currentUser;
+        setIsLoading(false);
+        user?.email
+          ? history.push(redirect_uri)
+          : history.push(location.state?.from);
       });
   };
 
@@ -40,21 +48,36 @@ const useHandleSignInSignOut = () => {
       .then(() => {
         // history.push(redirect_uri);
       })
-      .finally(() => {
+      .catch((error) => {
         setIsLoading(false);
-        history.push(redirect_uri);
+        setMessage(error.message);
+      })
+      .finally(() => {
+        const user = getAuth().currentUser;
+        setIsLoading(false);
+        user?.email
+          ? history.push(redirect_uri)
+          : history.push(location.state?.from);
       });
   };
 
-  const handleEmailPassSignIn = () => {
+  const handleEmailPassSignIn = (e) => {
+    e.preventDefault();
     setIsLoading(true);
     emailPassSignIn()
       .then(() => {
         // history.push(redirect_uri);
       })
-      .finally(() => {
+      .catch((error) => {
         setIsLoading(false);
-        history.push(redirect_uri);
+        setMessage(error.message);
+      })
+      .finally(() => {
+        const user = getAuth().currentUser;
+        setIsLoading(false);
+        user?.email
+          ? history.push(redirect_uri)
+          : history.push(location.state?.from);
       });
   };
 
@@ -64,9 +87,16 @@ const useHandleSignInSignOut = () => {
       .then((result) => {
         updateUser();
       })
-      .finally(() => {
+      .catch((error) => {
         setIsLoading(false);
-        history.push(redirect_uri);
+        setMessage(error.message);
+      })
+      .finally(() => {
+        const user = getAuth().currentUser;
+        setIsLoading(false);
+        user?.email
+          ? history.push(redirect_uri)
+          : history.push(location.state?.from);
       });
   };
 
