@@ -66,7 +66,7 @@ const SignIn = () => {
             </button>
           </div>
         </form>
-        <div className="flex items-center justify-center space-x-8 mt-4">
+        <div className="flex items-center justify-center space-x-8 mt-4 px-10">
           <Link className="text-blue-800" to="/login">
             Forgotten Password?
           </Link>

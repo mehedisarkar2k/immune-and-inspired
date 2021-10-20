@@ -2,7 +2,6 @@ import React from "react";
 import { BsFillTelephonePlusFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { MdAttachEmail } from "react-icons/md";
-import NewsLater from "../Home/NewsLater/NewsLater";
 import ContactImg from "./contact.png";
 import ContactForm from "./ContactForm";
 
@@ -20,7 +19,7 @@ const Contact = () => {
               </p>
 
               <div className="flex flex-col items-center justify-around text-left mt-5">
-                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg rounded-lg">
+                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg hover:shadow-xl transition rounded-lg">
                   <div className="bg-green-700 text-white p-6">
                     <GoLocation size="3em" />
                   </div>
@@ -32,7 +31,7 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg rounded-lg">
+                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg hover:shadow-xl transition rounded-lg">
                   <div className="bg-green-700 text-white p-6">
                     <BsFillTelephonePlusFill size="3em" />
                   </div>
@@ -45,7 +44,7 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg rounded-lg">
+                <div className="w-full text-green-700 flex items-center justify-start space-x-6 p-4 shadow-lg hover:shadow-xl transition rounded-lg">
                   <div className="bg-green-700 text-white p-6">
                     <MdAttachEmail size="3em" />
                   </div>
@@ -67,20 +66,22 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="mt-14 p-8 px-14 rounded-xl bg-white shadow-xl">
-          <h2 className="text-4xl text-green-700 mb-2">
-            We'd Love To Hear From You
-          </h2>
+        <div className="mt-14 md:p-8 md:px-14 rounded-xl bg-white shadow-xl">
+          <div className="p-5 -mb-10 md:mb-0">
+            <h2 className="text-4xl text-green-700 mb-2">
+              We'd Love To Hear From You
+            </h2>
 
-          <p className="text-lg text-gray-700">
-            The price is something not necessarily defined as financial. It
-            could be time, effort, sacrifice, money or perhaps, something else.
-          </p>
+            <p className="text-lg text-gray-700">
+              The price is something not necessarily defined as financial. It
+              could be time, effort, sacrifice, money or perhaps, something
+              else.
+            </p>
+          </div>
 
           <ContactForm />
         </div>
       </div>
-      <NewsLater />
     </div>
   );
 };

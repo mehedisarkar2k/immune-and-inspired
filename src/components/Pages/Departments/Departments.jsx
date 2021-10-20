@@ -18,13 +18,13 @@ const Departments = () => {
           <span className="h-1 bg-green-500 w-14"></span>
         </div>
 
-        <h2 className="text-4xl text-center my-2 text-green-300 mb-4">
+        <h2 className="text-4xl text-center px-5 my-2 text-green-300 mb-4">
           We Believe The Heart Of Healthcare Is Service To Others
         </h2>
       </div>
 
       <div className="container mx-auto p-10 -mt-52">
-        <div className="grid grid-cols-1 mx-10 md:mx-0 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {services.map((service) => (
             <Department key={service.id} service={service} />
           ))}

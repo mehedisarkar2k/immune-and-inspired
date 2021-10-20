@@ -10,7 +10,6 @@ import Home from "./components/Pages/Home/Home";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import Footer from "./components/Pages/Shared/Footer/Footer";
 import Header from "./components/Pages/Shared/Header/Header";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
 
 function App() {
@@ -29,7 +28,18 @@ function App() {
               <Home />
             </Route>
 
-            <PrivateRoute exact path="/departments">
+            <Route exact path="/departments">
+              <Departments />
+            </Route>
+
+            <Route exact path="/contact-us">
+              <Contact />
+            </Route>
+
+            <Route exact path="/service/:id">
+              <DetailsOfACart />
+            </Route>
+            {/* <PrivateRoute exact path="/departments">
               <Departments />
             </PrivateRoute>
 
@@ -39,7 +49,7 @@ function App() {
 
             <PrivateRoute exact path="/service/:id">
               <DetailsOfACart />
-            </PrivateRoute>
+            </PrivateRoute> */}
 
             <Route exact path="/covid-19">
               <CoronaInfo />

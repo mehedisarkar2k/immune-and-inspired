@@ -194,7 +194,7 @@ const Header = () => {
                 >
                   Corona Info
                 </NavLink>
-
+                <span className="block"></span>
                 {!user?.email ? (
                   <NavLink
                     className="bg-green-300 text-gray-800 px-4 py-2 rounded-full outline-none transition hover:bg-green-400 focus:ring focus:ring-offset-2 focus:ring-green-400 focus:ring-opacity-50"
