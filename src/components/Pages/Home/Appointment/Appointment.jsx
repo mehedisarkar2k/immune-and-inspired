@@ -3,7 +3,7 @@ import AppointmentStyle from "./Appointment.module.css";
 
 const Appointment = () => {
   return (
-    <div id="appointment" className={AppointmentStyle.primaryBg}>
+    <div className={AppointmentStyle.primaryBg}>
       <div className="container mx-auto py-14">
         <div className="w-full md:w-1/2">
           <h2 className="text-green-600 text-4xl font-bold my-5">

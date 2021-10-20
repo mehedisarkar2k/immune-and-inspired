@@ -14,12 +14,12 @@ const Departments = () => {
       >
         <div className="flex items-center justify-center space-x-2 text-green-200 mt-5 md:mt-10 lg:mt-20">
           <span className="h-1 bg-green-500 w-14"></span>
-          <h4 className="text-lg">World Class Service Departments</h4>
+          <h4 className="text-lg">Welcome to the</h4>
           <span className="h-1 bg-green-500 w-14"></span>
         </div>
 
         <h2 className="text-4xl text-center px-5 my-2 text-green-300 mb-4">
-          We Believe The Heart Of Healthcare Is Service To Others
+          Every Department Of Health & Family Benefit.
         </h2>
       </div>
 

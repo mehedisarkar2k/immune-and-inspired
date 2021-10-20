@@ -9,7 +9,7 @@ const ContactForm = () => {
           <div action="#" method="POST">
             <div className="shadow-lg overflow-hidden sm:rounded-lg">
               <div className="px-4 py-5 bg-white sm:p-6">
-                <div className="grid grid-cols-6 gap-6">
+                <div className="grid grid-cols-6 gap-2">
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="first_name"
@@ -22,7 +22,7 @@ const ContactForm = () => {
                       name="first_name"
                       id="first_name"
                       autoComplete="given-name"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -38,7 +38,7 @@ const ContactForm = () => {
                       name="last_name"
                       id="last_name"
                       autoComplete="family-name"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -54,7 +54,7 @@ const ContactForm = () => {
                       name="email_address"
                       id="email_address"
                       autoComplete="email"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -69,7 +69,7 @@ const ContactForm = () => {
                       id="country"
                       name="country"
                       autoComplete="country"
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                      className="mt-1 block w-full py-2 px-3 border bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                     >
                       <option>Dhaka</option>
                       <option>Bogura</option>
@@ -89,7 +89,23 @@ const ContactForm = () => {
                       name="street_address"
                       id="street_address"
                       autoComplete="street-address"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
+                    />
+                  </div>
+
+                  <div className="col-span-6">
+                    <label
+                      htmlFor="street_address"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Your Messages
+                    </label>
+                    <textarea
+                      type="text"
+                      name="messages"
+                      id="messages"
+                      autoComplete="street-address"
+                      className="mt-1 border-gray-600 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm  rounded-md"
                     />
                   </div>
 
@@ -104,7 +120,7 @@ const ContactForm = () => {
                       type="text"
                       name="city"
                       id="city"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -119,7 +135,7 @@ const ContactForm = () => {
                       type="text"
                       name="state"
                       id="state"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -135,7 +151,7 @@ const ContactForm = () => {
                       name="postal_code"
                       id="postal_code"
                       autoComplete="postal-code"
-                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
                 </div>

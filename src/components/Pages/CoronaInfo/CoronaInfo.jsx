@@ -1,14 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContactForm from "../Contact/ContactForm";
 import "./CoronaInfo.css";
 
 const CoronaInfo = () => {
+  const [allNews, setAllNews] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://raw.githubusercontent.com/mehedisarkar2k/medical-data/master/coronaInfo.json"
+    )
+      .then((res) => res.json())
+      .then((data) => setAllNews(data));
+  }, []);
+
+  console.log(allNews);
+
   return (
     <div className="corona px-10">
       <div className=" mt-10 container mx-auto">
         <h2 className="text-center text-4xl text-green-700">
           Coronavirus disease (COVID-19)
         </h2>
+
+        <div className="mt-10">
+          <div className="flex items-center justify-start mb-5">
+            <span className="h-0.5 bg-green-400 w-10"></span>
+            <h4 className="text-green-600 text-lg ml-2">Recent News</h4>
+            <span className="h-0.5 bg-green-400 w-10"></span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:space-x-4">
+            {allNews.map((news) => (
+              <div key={news.id} className="h-full pb-8 md:pb-0  ">
+                <div className="h-full rounded-2xl overflow-hidden shadow-md text-center group">
+                  <div className="">
+                    <img
+                      className="w-full h-52 object-cover transition transform group-hover:scale-105"
+                      src={news?.img}
+                      alt={news?.title}
+                    />
+                  </div>
+                  <div className="mt-4 px-4">
+                    <p className="text-left text-sm text-gray-600 mb-2">
+                      {news?.date}
+                    </p>
+
+                    <p className="text-left text-base text-green-700">
+                      {news?.title}
+                    </p>
+
+                    <button className="my-4 bg-green-700 text-white text-sm outline-none px-4 py-1 rounded-full transition focus:ring-1 focus:ring-offset-1 focus:ring-green-600 hover:bg-green-600">
+                      See Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-col items-center justify-center">
           <div className="mt-10">

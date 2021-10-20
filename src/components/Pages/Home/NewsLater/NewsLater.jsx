@@ -14,7 +14,6 @@ const NewsLater = () => {
               className="bg-transparent outline-none py-1 px-2 border-r-0 border-green-700 border-2"
               type="email"
               name=""
-              id=""
             />
             <button className="bg-green-700 text-white text-lg py-1 px-2 tracking-wide">
               Subscribe
