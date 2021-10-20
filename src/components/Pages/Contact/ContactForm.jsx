@@ -4,10 +4,10 @@ import "./ContactForm.css";
 const ContactForm = () => {
   return (
     <div className="contact mt-10 sm:mt-0">
-      <div className="">
+      <div className="w-full mx-auto md:w-1/2">
         <div className="mt-5 ">
           <div action="#" method="POST">
-            <div className="shadow overflow-hidden sm:rounded-md">
+            <div className="shadow-lg overflow-hidden sm:rounded-lg">
               <div className="px-4 py-5 bg-white sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">

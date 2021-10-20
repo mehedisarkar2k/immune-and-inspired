@@ -94,8 +94,8 @@ const CoronaInfo = () => {
           </div>
         </div>
 
-        <div className="my-10">
-          <h3 className="text-4xl text-green-700 border-b-2 border-green-600 inline-block">
+        <div className="my-10 text-center">
+          <h3 className="text-4xl text-green-700 border-b-2 border-green-600 inline-block text-center">
             Any Urgent needed
           </h3>
           <ContactForm />

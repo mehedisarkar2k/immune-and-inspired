@@ -12,6 +12,8 @@ const DetailsOfACart = () => {
   const item = services.filter((item) => item.id === id);
   const history = useHistory();
 
+  console.log(item[0]);
+
   const goBack = () => {
     history.goBack();
   };
@@ -19,27 +21,23 @@ const DetailsOfACart = () => {
   return (
     <div className="px-10">
       <div className="container mx-auto text-center space-y-4 py-5 shadow-lg my-5 rounded-3xl bg-green-50">
-        <h2 className="text-green-600 text-4xl">{item[0]?.title}</h2>
-        <p className="text-gray-600">{item[0]?.description}</p>
-        <img
-          className="w-1/3 mx-auto rounded-xl"
-          src={item[0]?.img}
-          alt={item[0]?.tittle}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 p-0 md:p-10 pb-0 space-x-10">
+          <div className="col-span-1 md:col-span-1">
+            <img
+              className="rounded-xl"
+              src={item[0]?.img}
+              alt={item[0]?.tittle}
+            />
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h2 className="text-green-600 text-4xl mb-4">{item[0]?.title}</h2>
+            <p className="mb-6 text-gray-700 text-xl">{item[0]?.description}</p>
 
-        <p className="px-6 md:p-10  text-gray-600 text-justify">
-          Medicine is the science and practice of caring for a patient, managing
-          the diagnosis, prognosis, prevention, treatment, palliation of their
-          injury or disease, and promoting their health. Medicine encompasses a
-          variety of health care practices evolved to maintain and restore
-          health by the prevention and treatment of illness. Contemporary
-          medicine applies biomedical sciences, biomedical research, genetics,
-          and medical technology to diagnose, treat, and prevent injury and
-          disease, typically through pharmaceuticals or surgery, but also
-          through therapies as diverse as psychotherapy, external splints and
-          traction, medical devices, biologics, and ionizing radiation, amongst
-          others.
-        </p>
+            <p className="px-6 text-gray-600 text-justify">
+              {item[0]?.details}
+            </p>
+          </div>
+        </div>
 
         <div className="flex flex-col items-center justify-center">
           <button className="mt-4 flex items-center cursor-pointer justify-center bg-green-600 rounded-full px-6 py-2 text-gray-50 tracking-widest font-semibold transition hover:bg-green-500 focus:ring focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-opacity-70">
@@ -61,8 +59,8 @@ const DetailsOfACart = () => {
       </div>
 
       <div className="p-14 md:p-8 lg:p-5">
-        <h4 className="text-3xl mt-5 text-green-700">
-          Feel free to say any thing
+        <h4 className="text-3xl mt-5 text-green-700 text-center">
+          Feel free to Contact with us
         </h4>
         <ContactForm />
       </div>
