@@ -16,7 +16,7 @@ https://immune-and-inspired.web.app/
 
 1. Clone this repository
    ```sh
-   git clone https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-mehedisarkar2k
+   git clone git@github.com:mehedisarkar2k/immune-and-inspired.git
    ```
 2. Run
    ```sh
